@@ -27,5 +27,13 @@ public class FreeNowGetAPICall {
 		return response;
 	}
 	
+	public static Response getPostComments(int postID,String url)
+	{
+		
+		httpRequest = RestAssured.given();
+		httpRequest.param("postId", postID);
+		Response response = httpRequest.request(Method.GET,url);
+		return response;
+	}
 
 }
